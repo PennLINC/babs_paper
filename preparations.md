@@ -1,10 +1,13 @@
 # Preparations before running BABS
 
+## Prepare conda env `showcase`
+
 ## Create a main folder
 ```
 cd /cbica/projects/BABS
 mkdir babs_showcase
 cd babs_showcase
+conda activate showcase
 ```
 
 ## Clone the input dataset
