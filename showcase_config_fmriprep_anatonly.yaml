@@ -10,9 +10,9 @@ singularity_run:
     --stop-on-first-crash: ""
     --fs-license-file: "/cbica/projects/BABS/software/FreeSurfer/license.txt"  # path to FS license file
     --skip-bids-validation: ""
-    --output-spaces: MNI152NLin6Asym:res-2   # Q: is it needed????
+    --output-spaces: MNI152NLin6Asym:res-2   # Q: I added this anyway, consistent with RBC
     --force-bbr: ""
-    #--cifti-output: 91k   # Q: Do we need this for `--anat-only`???
+    --cifti-output: 91k   # Q: I added this anyway, consistent with RBC
     -v: '-v'
     --anat-only: ''
     # Q: I don't think `--sloppy` should be added?
@@ -27,7 +27,7 @@ cluster_resources:
     interpreting_shell: /bin/bash   # "-S /bin/bash" on cubic
     hard_memory_limit: 25G   # "-l h_vmem=25G" on cubic
     temporary_disk_space: 200G   # "-l tmpfree=200G" on cubic  # this is highly-recommended on cubic
-    hard_runtime_limit: "48:00:00"    # 2 days
+    hard_runtime_limit: "48:00:00"    # 2 days   # Q: 2 days still make sense w/o `--sloppy`?
     customized_text: |
         #$ -R y
         #$ -l hostname=!compute-fed*
