@@ -15,7 +15,7 @@ singularity_run:
     --cifti-output: 91k   # Q: I added this anyway, consistent with RBC
     -v: '-v'
     --anat-only: ''
-    # Q: I don't think `--sloppy` should be added?
+    # Q: I don't think `--sloppy` should be added? NO shouldn't
 
 # Output foldername(s) to be zipped, and the BIDS App version to be included in the zip filename(s):
 #   We use fMRIPrep's version string when zipping 'freesurfer' folder.
@@ -27,7 +27,7 @@ cluster_resources:
     interpreting_shell: /bin/bash   # "-S /bin/bash" on cubic
     hard_memory_limit: 25G   # "-l h_vmem=25G" on cubic
     temporary_disk_space: 200G   # "-l tmpfree=200G" on cubic  # this is highly-recommended on cubic
-    hard_runtime_limit: "48:00:00"    # 2 days   # Q: 2 days still make sense w/o `--sloppy`?
+    hard_runtime_limit: "48:00:00"    # 2 days   # Q: 2 days still make sense w/o `--sloppy`? yes still plenty
     customized_text: |
         #$ -R y
         #$ -l hostname=!compute-fed*

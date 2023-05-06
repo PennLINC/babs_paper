@@ -16,3 +16,9 @@ Clone the input dataset from PMACS to CUBIC:
 datalad clone ria+ssh://[username]@[pmacs login node path]:/static/LINC_HBN#~BIDS HBN_BIDS
 ```
 Replace `[username]` and `[pmacs login node path]` with the correct one.
+
+Get the data needed first, otherwise my pmacs credentials will be asked during job run:
+```
+# in a screen session:
+datalad get sub-*/ses-*/anat/ -J 2
+```
