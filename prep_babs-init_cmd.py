@@ -3,12 +3,23 @@
 
 import os.path as op
 
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++
+flag_instance = "toybidsapp"   # "fmriprep_anatonly" or "toybidsapp" (for testing only)
 flag_where = "local"    # "cubic" or "local"
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 type_session = "single-ses"
-bidsapp = "fmriprep"
-config_yaml_filename = "showcase_config_fmriprep_anatonly.yaml"
-container_name = "fmriprep-20-2-3"
+
+if flag_instance == "fmriprep_anatonly":
+    project_name = "showcase_HBN_fmriprep_anatonly"
+    bidsapp = "fmriprep"
+    container_name = "fmriprep-20-2-3"
+    config_yaml_filename = "showcase_config_fmriprep_anatonly.yaml"
+elif flag_instance == "toybidsapp":
+    project_name = "test_showcase_HBN_toybidsapp"
+    bidsapp = "toybidsapp"
+    container_name = "toybidsapp-0-0-7"
+    config_yaml_filename = "../babs/notebooks/example_container_toybidsapp.yaml"
 
 if flag_where == "cubic":
     where_project = "/cbica/projects/BABS/babs_showcase"
@@ -23,7 +34,6 @@ elif flag_where == "local":
     container_ds = op.join(where_project, "toybidsapp-container-docker")
     container_config_yaml_file = op.join(where_root, "babs_paper", config_yaml_filename)
 
-project_name = "showcase_HBN_fmriprep_anatonly"
 list_sub_file = None   # no pre-defined subject list file
 
 cmd = "babs-init \\\n"

@@ -1,7 +1,10 @@
 # Preparations before running BABS
 
-## Prepare conda env `showcase`
-
+## Prepare conda env `showcase` for large dataset application
+This env was created via cloning `babs_demo` env:
+```
+conda create --name showcase --clone babs_demo
+```
 ## Create a main folder
 ```
 cd /cbica/projects/BABS
