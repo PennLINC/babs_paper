@@ -10,30 +10,28 @@ singularity_run:
     --stop-on-first-crash: ""
     --fs-license-file: "/cbica/projects/BABS/software/FreeSurfer/license.txt"  # path to FS license file
     --skip-bids-validation: ""
-    --output-spaces: MNI152NLin6Asym:res-2   # Q: I added this anyway, consistent with RBC
+    --output-spaces: MNI152NLin6Asym:res-2
     --force-bbr: ""
-    --cifti-output: 91k   # Q: I added this anyway, consistent with RBC
+    --cifti-output: 91k
     -v: '-v'
     --anat-only: ''
-    # Q: I don't think `--sloppy` should be added? NO shouldn't
 
 # Output foldername(s) to be zipped, and the BIDS App version to be included in the zip filename(s):
 #   We use fMRIPrep's version string when zipping 'freesurfer' folder.
 zip_foldernames:
-    freesurfer: "20-2-3"   # folder 'freesurfer' will be zipped into 'sub-xx_ses-yy_freesurfer-20-2-3.zip'
+    freesurfer: "20-2-3"   # folder 'freesurfer' will be zipped into 'sub-xx_(ses-yy_)freesurfer-20-2-3.zip'
 
 # How much cluster resources it needs:
 cluster_resources:
     interpreting_shell: /bin/bash   # "-S /bin/bash" on cubic
     hard_memory_limit: 25G   # "-l h_vmem=25G" on cubic
     temporary_disk_space: 200G   # "-l tmpfree=200G" on cubic  # this is highly-recommended on cubic
-    hard_runtime_limit: "48:00:00"    # 2 days   # Q: 2 days still make sense w/o `--sloppy`? yes still plenty
+    hard_runtime_limit: "48:00:00"    # 2 days
     customized_text: |
         #$ -R y
         #$ -l hostname=!compute-fed*
 # Notes: Above `customized_text` is Penn Med CUBIC cluster specific.
 #   So it's probably not relevant for other clusters
-# Q: `-R y` should be fine to show up in papers, right?
 
 # Necessary commands to be run first:
 script_preamble: |
