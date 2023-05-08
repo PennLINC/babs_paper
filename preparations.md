@@ -25,3 +25,34 @@ Get the data needed first, otherwise my pmacs credentials will be asked during j
 # in a screen session:
 datalad get sub-*/ses-*/anat/ -J 2
 ```
+
+## Prepare container DataLad dataset
+
+Singularity build the image:
+<!--
+ref:
+* https://www.nipreps.org/apps/singularity/
+* `babs_tests/prep_test_data/run_theway_NKI-exemplar.sh`
+-->
+```
+singularity build fmriprep-20.2.3.sif docker://nipreps/fmriprep:20.2.3
+```
+
+Add to a datalad dataset:
+<!-- ref: BABS docs: example walkthru-->
+```
+datalad create -D "fMRIPrep" fmriprep-container
+cd fmriprep-container
+datalad containers-add \
+    --url ${PWD}/../fmriprep-20.2.3.sif \
+    fmriprep-20-2-3
+```
+Remove the original sif file:
+```
+cd ..
+rm fmriprep-20.2.3.sif 
+```
+
+## Prepare container configuration YAML file
+Prepared: [showcase_config_fmriprep_anatonly.yaml](showcase_config_fmriprep_anatonly.yaml)
+

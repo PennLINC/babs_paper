@@ -4,8 +4,8 @@
 import os.path as op
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++
-flag_instance = "toybidsapp"   # "fmriprep_anatonly" or "toybidsapp" (for testing only)
-flag_where = "local"    # "cubic" or "local"
+flag_instance = "fmriprep_anatonly"   # "fmriprep_anatonly" or "toybidsapp" (for testing only)
+flag_where = "cubic"    # "cubic" or "local"
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 type_session = "single-ses"
@@ -22,10 +22,11 @@ elif flag_instance == "toybidsapp":
     config_yaml_filename = "../babs/notebooks/example_container_toybidsapp.yaml"
 
 if flag_where == "cubic":
-    where_project = "/cbica/projects/BABS/babs_showcase"
-    input_ds = "?????"   # path to the input dataset
+    where_root = "/cbica/projects/BABS/"
+    where_project = op.join(where_root, "babs_showcase")
+    input_ds = "/cbica/projects/BABS/babs_showcase/HBN_BIDS"   # path to the input dataset
     container_ds = op.join(where_project, bidsapp + "-container")
-    container_config_yaml_file = "????"   # path to yaml file
+    container_config_yaml_file = op.join(where_root, "babs_paper", config_yaml_filename)
 elif flag_where == "local":
     where_root = "/Users/chenyzh/Desktop/Research/Satterthwaite_Lab/datalad_wrapper"
     where_project = op.join(where_root, "data")
