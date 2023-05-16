@@ -1,0 +1,26 @@
+$ date; babs-status --project-root $PWD --container-config-yaml-file /cbica/projects/BABS/babs_paper/showcase_config_fmriprep_anatonly.yaml --job-account; date
+Mon May 15 11:19:05 EDT 2023
+Did not request resubmit based on job states (no `--resubmit`).
+`--job-account` was requested; `babs-status` may take longer time...
+
+Job status:
+There are in total of 2565 jobs to complete.
+2565 job(s) have been submitted; 0 job(s) haven't been submitted.
+Among submitted jobs,
+1486 job(s) are successfully finished;
+572 job(s) are pending;
+330 job(s) are running;
+177 job(s) are failed.
+
+Among all failed job(s):
+13 job(s) have alert message: 'stdout file: Excessive topologic defect encountered';
+1 job(s) have alert message: 'stdout file: mris_curvature_stats: Could not open file';
+2 job(s) have alert message: 'stdout file: fMRIPrep failed';
+160 job(s) have alert message: 'BABS: No alert message found in log files.';
+1 job(s) have alert message: 'stdout file: Numerical result out of range';
+
+Among job(s) that are failed and don't have alert message in log files:
+160 job(s) have job account of: 'qacct: failed: 37  : qmaster enforced h_rt, h_cpu, or h_vmem limit';
+
+All log files are located in folder: /cbica/projects/BABS/babs_showcase/showcase_HBN_fmriprep_anatonly/analysis/logs
+Mon May 15 11:43:53 EDT 2023
