@@ -1,0 +1,44 @@
+# Without failed job auditing:
+$ date; babs-status --project-root $PWD; date
+Tue May 16 21:39:05 EDT 2023
+Did not request resubmit based on job states (no `--resubmit`).
+
+Job status:
+There are in total of 2565 jobs to complete.
+2565 job(s) have been submitted; 0 job(s) haven't been submitted.
+Among submitted jobs,
+1964 job(s) are successfully finished;
+0 job(s) are pending;
+364 job(s) are running;
+237 job(s) are failed.
+
+All log files are located in folder: /cbica/projects/BABS/babs_showcase/showcase_HBN_fmriprep_anatonly/analysis/logs
+Tue May 16 21:40:18 EDT 2023
+
+# With failed job auditing:
+$ date; babs-status --project-root $PWD --container-config-yaml-file /cbica/projects/BABS/babs_paper/showcase_config_fmriprep_anatonly.yaml --job-account; date
+Tue May 16 21:41:24 EDT 2023
+Did not request resubmit based on job states (no `--resubmit`).
+`--job-account` was requested; `babs-status` may take longer time...
+
+Job status:
+There are in total of 2565 jobs to complete.
+2565 job(s) have been submitted; 0 job(s) haven't been submitted.
+Among submitted jobs,
+1964 job(s) are successfully finished;
+0 job(s) are pending;
+364 job(s) are running;
+237 job(s) are failed.
+
+Among all failed job(s):
+1 job(s) have alert message: 'stdout file: mris_curvature_stats: Could not open file';
+2 job(s) have alert message: 'stdout file: Numerical result out of range';
+2 job(s) have alert message: 'stdout file: fMRIPrep failed';
+18 job(s) have alert message: 'stdout file: Excessive topologic defect encountered';
+214 job(s) have alert message: 'BABS: No alert message found in log files.';
+
+Among job(s) that are failed and don't have alert message in log files:
+214 job(s) have job account of: 'qacct: failed: 37  : qmaster enforced h_rt, h_cpu, or h_vmem limit';
+
+All log files are located in folder: /cbica/projects/BABS/babs_showcase/showcase_HBN_fmriprep_anatonly/analysis/logs
+Tue May 16 22:14:22 EDT 2023
