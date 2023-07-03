@@ -1,0 +1,46 @@
+(showcase) babs@cubic-sattertt1:output_showcase_HBN_fmriprep_anatonly$ git log --oneline
+9c1a77b (HEAD -> master, origin/master, origin/HEAD) merge results chunk 2/2
+70ef74b merge results chunk 1/2
+09ce675 (origin/job-5015398-sub-NDARYT155NHX) [DATALAD RUNCMD] fmriprep-20-2-3 sub-NDARYT155NHX
+2b803a0 (origin/job-5015385-sub-NDARXY162ERA) [DATALAD RUNCMD] fmriprep-20-2-3 sub-NDARXY162ERA
+d0003a0 (origin/job-5015362-sub-NDARWP954GPJ) [DATALAD RUNCMD] fmriprep-20-2-3 sub-NDARWP954GPJ
+3e93ea9 (origin/job-5015311-sub-NDARTE159EC4) [DATALAD RUNCMD] fmriprep-20-2-3 sub-NDARTE159EC4
+a2233ae (origin/job-5015298-sub-NDARRB403PDE) [DATALAD RUNCMD] fmriprep-20-2-3 sub-NDARRB403PDE
+8e20023 (origin/job-5015364-sub-NDARWT086XMF) [DATALAD RUNCMD] fmriprep-20-2-3 sub-NDARWT086XMF
+# The remaining lines are omitted here.
+
+(showcase) babs@cubic-sattertt1:output_showcase_HBN_fmriprep_anatonly$ git show 09ce675
+commit 09ce6759c4090d16f88001494769699783d884f1 (origin/job-5015398-sub-NDARYT155NHX)
+Author: Chenying Zhao <chenyzh@seas.upenn.edu>
+Date:   Mon May 22 07:21:09 2023 -0400
+
+    [DATALAD RUNCMD] fmriprep-20-2-3 sub-NDARYT155NHX
+    
+    === Do not change lines below ===
+    {
+     "chain": [],
+     "cmd": "bash ./code/fmriprep-20-2-3_zip.sh sub-NDARYT155NHX",
+     "dsid": "1e4936c8-3164-47b6-a40f-542a48234b82",
+     "exit": 0,
+     "extra_inputs": [],
+     "inputs": [
+      "code/fmriprep-20-2-3_zip.sh",
+      "inputs/data/BIDS/sub-NDARYT155NHX",
+      "inputs/data/BIDS/dataset_description.json",
+      "containers/.datalad/environments/fmriprep-20-2-3/image"
+     ],
+     "outputs": [
+      "sub-NDARYT155NHX_freesurfer-20-2-3.zip"
+     ],
+     "pwd": "."
+    }
+    ^^^ Do not change lines above ^^^
+
+diff --git a/sub-NDARYT155NHX_freesurfer-20-2-3.zip b/sub-NDARYT155NHX_freesurfer-20-2-3.zip
+new file mode 120000
+index 0000000..7add559
+--- /dev/null
++++ b/sub-NDARYT155NHX_freesurfer-20-2-3.zip
+@@ -0,0 +1 @@
++.git/annex/objects/50/W6/MD5E-s747482369--8eaf0a8fe6201c62d389953df18d9d88.zip/MD5E-s747482369--8eaf0a8fe6201c62d389953df18d9d88.zip
+\ No newline at end of file
