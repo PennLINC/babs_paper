@@ -23,6 +23,8 @@ Here,
         * After resubmitting failed jobs + they also finished: [message_babs-status_2023-05-24_10-09.txt](message_babs-status_2023-05-24_10-09.txt)
     * `figure_babs-status_msg.txt`:
         * Used for Figure 4
-
+* Git history of showcase:
+    * [showcase_git_history_commit.txt](showcase_git_history_commit.txt)
+    * Used for Supplementary Figure 2.
 
 
