@@ -13,7 +13,7 @@ Here,
 * YAML file used for showcase:
     * [showcase_config_fmriprep_anatonly.yaml](showcase_config_fmriprep_anatonly.yaml) was directly used in the showcase;
     * [figure_showcase_config_fmriprep_anatonly.yaml](figure_showcase_config_fmriprep_anatonly.yaml):
-        * Used for Supplementary Figure 1. 
+        * Used for Figure 4.
         * Copied from above [showcase_config_fmriprep_anatonly.yaml](showcase_config_fmriprep_anatonly.yaml), only with some minor comments removed.
 
 ## Folder `showcase_messages`
@@ -22,9 +22,9 @@ Here,
         * 1st round of submitted jobs finished: [message_babs-status_2023-05-19_11-06.txt](message_babs-status_2023-05-19_11-06.txt)
         * After resubmitting failed jobs + they also finished: [message_babs-status_2023-05-24_10-09.txt](message_babs-status_2023-05-24_10-09.txt)
     * `figure_babs-status_msg.txt`:
-        * Used for Figure 4
+        * Used for Figure 5.
 * Git history of showcase:
     * [showcase_git_history_commit.txt](showcase_git_history_commit.txt)
-    * Used for Supplementary Figure 2.
+    * Used for Figure 6.
 
 
